@@ -1,0 +1,38 @@
+project:
+  name: spark-data-skew-optimization
+
+spark:
+  master: local[*]
+  app_name: spark-data-skew-optimization
+  shuffle_partitions: 8
+
+data:
+  input_dir: data/input
+  generated_dir: data/generated
+  expected_dir: data/expected
+  output_dir: output
+
+generator:
+  record_count: 100000
+  random_seed: 42
+  customer_count: 10000
+  hot_customer_count: 10
+  hot_customer_fraction: 0.8
+
+optimization:
+  salt_buckets: 16
+
+benchmark:
+  repeats: 3
+
+validation:
+  supported_currencies:
+    - USD
+    - EUR
+
+skew_detection:
+  top_n: 10
+
+logging:
+  level: INFO
+  directory: logs

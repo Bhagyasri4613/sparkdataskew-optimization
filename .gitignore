@@ -1,0 +1,22 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+
+# Runtime-generated data and reports; retain the directory placeholders.
+data/generated/*
+!data/generated/.gitkeep
+output/*
+!output/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# Spark local runtime files
+spark-warehouse/
+metastore_db/
+derby.log
